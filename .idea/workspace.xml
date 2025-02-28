@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74ab324c-ab90-4058-9ea3-958fe65e14ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/database.config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/airline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/airport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/flight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/flight_reservation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="74ab324c-ab90-4058-9ea3-958fe65e14ad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
