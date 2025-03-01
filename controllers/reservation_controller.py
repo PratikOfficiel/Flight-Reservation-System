@@ -6,8 +6,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from datetime import datetime
 import mysql.connector
 
-
-# Task 9: Import modules
 from models.flight import Flight
 from models.flight_reservation import FlightReservation
 from repositories.flight_repository import FlightRepository
@@ -25,7 +23,6 @@ class ReservationController:
             database="flight"
         )
 
-        # Task 9: Instantiate the repository objects
         self.flight_repo = FlightRepository()
         self.reservation_repo = ReservationRepository()
 
@@ -34,9 +31,7 @@ class ReservationController:
         # Reorder tuple to match the Flight initializer
         reordered_flight_data = flight_data[1:] + (flight_data[0],)
         return Flight(*reordered_flight_data)
-    
 
-    # Task 9: Define the view_reservations() function
     def view_reservations(self, user):
         print("In the function View Reservations:")
         reservations = self.reservation_repo.get_reservations_by_user(user)
@@ -45,9 +40,7 @@ class ReservationController:
             return
         for reservation in reservations:
             print(reservation)
-    
 
-    # Task 9: Define the cancel_reservation() function
     def cancel_reservation(self,user):
 
         reservation_number = input("Please enter the reservation number to cancel: ")
@@ -68,7 +61,6 @@ class ReservationController:
         except Exception as e:
             print(f"Error cancelling reservation : {e}")
 
-    # Task 9: Define the process_payment() function
 
     def process_payment(self, user, price):
         print(f"Processing payment for {user.username} for total price of: ${price}")
@@ -116,8 +108,6 @@ class ReservationController:
             print("Itinerary reservation made successfully.")
         return
 
-
-    # Task 13: Define the function to search flights
     def search_flights(self,user):
         date = input("Flying Date (YYYY-MM-DD): ")
         departure_airport = input("Origin airport: ")
@@ -175,7 +165,6 @@ class ReservationController:
 
         self._handle_user_choice(user, shortest_itinerary, shortest_flight, cheapest_option)
 
-    # Task 15: Call the _find_cheapest_route() function
 
     def _find_cheapest_route(self, flight_or_itineraries, departure_airport, destination_airport):
         graph = {}
@@ -228,8 +217,6 @@ class ReservationController:
         return None
 
 
-
-    # Task 17: Create the _handle_user_choice() function
     def _handle_user_choice(self, user, shortest_itinerary, shortest_flight, cheapest_option):
         print("Select one of the following route")
 
