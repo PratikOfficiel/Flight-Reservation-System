@@ -51,4 +51,4 @@ class Airport:
 
     def display_flights(self):
         for flight in self.__flights:
-            print(flight)   # Make sure flight has a __repr__
+            print(flight)

@@ -1,7 +1,5 @@
-# from models.payment import Payment
-from datetime import date
 
-# Task 7: Create Reservation Class
+from datetime import date
 class FlightReservation:
     def __init__(self, reservation_number, user_id, flight, seat_count, creation_date, total_amount):
         self.__reservation_number = reservation_number

@@ -4,7 +4,6 @@ class Airline:
         self.__code = code
         self.__flights = []  # List of flights
 
-    # String representation
     def __repr__(self):
         return f"Airline(name='{self.__name}', code='{self.__code}', flights={len(self.__flights)})"
 

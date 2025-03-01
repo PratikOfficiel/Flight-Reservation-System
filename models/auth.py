@@ -53,14 +53,12 @@ class CLIAuthenticator:
         self.cursor = self.conn.cursor()
 
     def register(self, account: Account) -> bool:
-        """Register a new account and assign a role."""
-        # Check if the username already exists in the database
         query = "SELECT username FROM Account WHERE username = %s"
         self.cursor.execute(query, (account.username,))
         result = self.cursor.fetchone()
 
         if result:
-            return False  # Username already exists
+            return False
 
         # Insert new account into the Account table
         insert_query = """
@@ -81,7 +79,6 @@ class CLIAuthenticator:
 
 
     def authenticate(self, username: str, password: str) -> Account:
-        """Attempt to authenticate a user by their username and password, and fetch roles."""
         # Query the database for the account
         query = "SELECT account_id, username, password, status FROM Account WHERE username = %s"
         self.cursor.execute(query, (username,))
@@ -89,7 +86,6 @@ class CLIAuthenticator:
 
         if result and result[2] == password:  # Check if password matches
             account_id = result[0]
-            # Fetch roles for the user
             role_query = """
             SELECT Role.name FROM Role
             JOIN Account_Role ON Role.role_id = Account_Role.role_id
@@ -103,11 +99,10 @@ class CLIAuthenticator:
                 password=result[2],
                 account_id=account_id,
                 status=result[3],
-                roles=roles  # Set the user's roles
+                roles=roles
             )
         return None
 
     def close(self):
-        """Close the database connection."""
         if self.conn.is_connected():
             self.conn.close()

@@ -1,8 +1,5 @@
-# Task 14: Import the Amadeus components
 from amadeus import Client, ResponseError
 
-
-# Task 3: Define the Flight class
 class Flight:
     def __init__(self, airline_code, distance_km, dep_time, arri_time, dep_port, arri_port, booked_seats=0,
                  flight_no=None):
@@ -83,7 +80,6 @@ class Flight:
     def get_ticket_price():
         pass
 
-    # Task 14: Implement the get_ticket_price() function
     def get_ticket_price(self):
 
         amadeus = Client(
@@ -112,7 +108,7 @@ class Flight:
             return None
 
         except ResponseError as e:
-            print(f"Error fetching flight price: {error}")
+            print(f"Error fetching flight price: {e}")
             return None
 
     def __lt__(self, other):
