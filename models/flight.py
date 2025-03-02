@@ -1,4 +1,5 @@
 from amadeus import Client, ResponseError
+import os
 
 class Flight:
     def __init__(self, airline_code, distance_km, dep_time, arri_time, dep_port, arri_port, booked_seats=0,
@@ -69,7 +70,7 @@ class Flight:
                 f"Departure from: {self.__dep_port} at {self.__dep_time}, "
                 f"Arrival at: {self.__arri_port} at {self.__arri_time}")
 
-    def book_seats(num):
+    def book_seats(self, num):
         available_seats = self.get_available_seats()
         if num > available_seats:
             raise Exception(f"Not enough seats available. Onlyl {self.get_available_seats()} left.")
@@ -77,14 +78,13 @@ class Flight:
             self.__booked_seats += num
             print(f"{num} seats(s) booked successfully")
 
-    def get_ticket_price():
-        pass
-
     def get_ticket_price(self):
+        # print(os.getenv("AMADEUS_CLIENT_ID"))
+        # print(os.getenv("AMADEUS_CLIENT_SECRET"))
 
         amadeus = Client(
-            client_id="q3zb4c0LTZeJztzhS3lLqXgtaApmGq9T",
-            client_secret="QCQsVn7zes3HSyIJ"
+            client_id=os.getenv("AMADEUS_CLIENT_ID"),
+            client_secret=os.getenv("AMADEUS_CLIENT_SECRET")
         )
 
         try:
