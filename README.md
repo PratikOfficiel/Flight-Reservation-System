@@ -60,6 +60,14 @@ You are ready run run the code:
 python3 main.py
 ```
 
+#### One sample search could be:
+```txt
+2024-12-06
+IAH
+AUS
+2
+```
+
 ### Constraints on System:
 
 #### Departure Date only available b/w 2024-01-01 to 2024-12-31
