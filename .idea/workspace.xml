@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74ab324c-ab90-4058-9ea3-958fe65e14ad" name="Changes" comment="" />
+    <list default="true" id="74ab324c-ab90-4058-9ea3-958fe65e14ad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sample.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/database_config.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sinova/Projects/python/Flight_Reservation_System/controllers"
+    "last_opened_file_path": "/home/sinova/Projects/python/Flight_Reservation_System"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -62,5 +66,8 @@
       <updated>1740749606641</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
 </project>

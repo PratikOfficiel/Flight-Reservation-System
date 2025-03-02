@@ -1,5 +1,3 @@
-# Rename to database_config.py for clarity
-# import the connector
 import os
 
 import mysql.connector
@@ -19,13 +17,10 @@ connection = mysql.connector.connect(
 mycursor = connection.cursor()
 
 # query for a table named users
-# mycursor.execute("SELECT * from users")
 mycursor.execute("SELECT user, host FROM mysql.user WHERE user = 'educative';")
 
-# fetch all retrieved rows
 myresult = mycursor.fetchall()
 
-# display all rows onto the console
 for x in myresult:
   print(x)
 
