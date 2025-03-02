@@ -36,4 +36,4 @@ Make sure you have the following installed on your system:
 To get started with the project, first, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/flight-booking-management-system.git
+git clone https://github.com/PratikOfficiel/Flight-Reservation-System.git
