@@ -37,3 +37,26 @@ To get started with the project, first, clone the repository to your local machi
 
 ```bash
 git clone https://github.com/PratikOfficiel/Flight-Reservation-System.git
+```
+Change Directory and create a virtual env:
+
+```bash
+cd Flight-Reservation-System
+python -m venv venv
+source venv/bin/activate
+```
+Install required packages:
+```bash
+pip install -r requirements.txt
+```
+Set up .env file and create the corresponding database then run these files:
+```bash
+python3 repositories/tables.py
+python3 repositories/seed.py
+```
+
+You are ready run run the code:
+```bash
+python3 main.py
+```
+
