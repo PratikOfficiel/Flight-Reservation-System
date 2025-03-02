@@ -1,29 +1,65 @@
-class Address:
-    def __init__(self, city, state, country):
-        self.__city = city
-        self.__state = state
-        self.__country = country
+import os
+import sys
 
-    # String representation
-    def __repr__(self):
-        return f"city='{self.__city}', state='{self.__state}', country='{self.__country}'"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-    # Getters
-    def get_city(self):
-        return self.__city
+from controllers.user_controller import UserController
+from controllers.flight_controller import FlightController
+from controllers.reservation_controller import ReservationController
 
-    def get_state(self):
-        return self.__state
+def main():
+    user_controller = UserController()
 
-    def get_country(self):
-        return self.__country
+    while (user_controller.current_user == None):
 
-    # Setters
-    def update_city(self, new_city: str):
-        self.__city = new_city
+        print("\n1. Login\n2. Signup\n3. Exit")
+        option = input("Select an option: ")
 
-    def update_state(self, new_state: str):
-        self.__state = new_state
+        if option == "1":
+            user_controller.login()
+        elif option == "2":
+            if (user_controller.signup()):
+                user_controller.login()
 
-    def update_country(self, new_country: str):
-        self.__country = new_country
+        elif option == "3":
+            return
+        else:
+            print("Please select a valid input")
+
+    if (user_controller.current_user):
+
+        user = user_controller.current_user
+        flightController = FlightController()
+        reservationController = ReservationController()
+
+        while True:
+
+            print("1. Search/Reserve flights")
+            print("2. View reservations")
+            print("3. Cancel the reservation")
+            print("4. Add the flight (for admin only)")
+            print("5. Cancel the flight (for admin only)")
+            print("6. Exit")
+
+            choice = input("Enter your choice: ")
+
+            if choice == "1":
+                reservationController.search_flights(user)
+            elif choice == "2":
+                reservationController.view_reservations(user)
+            elif choice == "3":
+                reservationController.cancel_reservation(user)
+            elif choice == "4":
+                flightController.add_flight(user)
+            elif choice == "5":
+                flightController.delete_flight(user)
+            elif choice == "6":
+                break
+            else:
+                print("Invalid choice, try again.")
+
+    return
+
+
+if __name__ == "__main__":
+    main()
