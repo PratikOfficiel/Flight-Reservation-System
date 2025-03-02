@@ -73,14 +73,12 @@ class Flight:
     def book_seats(self, num):
         available_seats = self.get_available_seats()
         if num > available_seats:
-            raise Exception(f"Not enough seats available. Onlyl {self.get_available_seats()} left.")
+            raise Exception(f"Not enough seats available. Only {self.get_available_seats()} left.")
         else:
             self.__booked_seats += num
             print(f"{num} seats(s) booked successfully")
 
     def get_ticket_price(self):
-        # print(os.getenv("AMADEUS_CLIENT_ID"))
-        # print(os.getenv("AMADEUS_CLIENT_SECRET"))
 
         amadeus = Client(
             client_id=os.getenv("AMADEUS_CLIENT_ID"),
@@ -93,8 +91,8 @@ class Flight:
                 destinationLocationCode=self.__arri_port,
                 departureDate=self.__dep_time.strftime("%Y-%m-%d"),
                 adults=1,
-                currencyCode="INR"
-            ).data
+            )
+            print(flights)
 
             response_one_flight = amadeus.shopping.flight_offers.pricing.post(
                 flights[0]
