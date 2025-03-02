@@ -29,6 +29,7 @@ def main():
     if (user_controller.current_user):
 
         user = user_controller.current_user
+
         flightController = FlightController()
         reservationController = ReservationController()
 

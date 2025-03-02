@@ -17,10 +17,10 @@ class ReservationController:
     def __init__(self):
         # Establish a database connection
         self.connection = mysql.connector.connect(
-            host="localhost",
-            user="educative",
-            password="secret",
-            database="flight"
+          host=os.getenv("DB_HOST"),
+          user=os.getenv("DB_USER"),
+          password=os.getenv("DB_PASSWORD"),
+          database=os.getenv("DB_DATABASE")
         )
 
         self.flight_repo = FlightRepository()
