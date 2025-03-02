@@ -120,6 +120,11 @@ class ReservationController:
         dis_shortest_itinerary = float('inf')
         shortest_itinerary = None
 
+        print("total flights found:")
+        print(flights)
+        print("total itineraries found:")
+        print(itineraries)
+
         for flight in flights:
             flight_obj = self.create_flight_object(flight)
             if flight_obj.get_distance_km() < dis_shortest_flight:

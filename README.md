@@ -60,7 +60,11 @@ You are ready run run the code:
 python3 main.py
 ```
 
-### Available Airport Codes for Flight search:
+### Constraints on System:
+
+#### Departure Date only available b/w 2024-01-01 to 2024-12-31
+
+#### Available Airport Codes for Flight search:
 
 - ABE
 - ABQ
