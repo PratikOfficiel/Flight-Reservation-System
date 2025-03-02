@@ -1,4 +1,7 @@
 import mysql.connector
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 class Role:
     def __init__(self, name: str, permissions: list):
@@ -45,10 +48,10 @@ class CLIAuthenticator:
     def __init__(self):
         """CLIAuthenticator for handling user login and registration."""
         self.conn = mysql.connector.connect(
-            host="localhost",
-            user="educative",
-            password="secret",
-            database="flight"
+          host=os.getenv("DB_HOST"),
+          user=os.getenv("DB_USER"),
+          password=os.getenv("DB_PASSWORD"),
+          database=os.getenv("DB_DATABASE")
         )
         self.cursor = self.conn.cursor()
 

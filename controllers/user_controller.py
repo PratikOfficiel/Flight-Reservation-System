@@ -2,7 +2,7 @@
 # Add the project root directory to sys.path
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 from models.auth import CLIAuthenticator, Account
@@ -10,7 +10,6 @@ import mysql.connector
 
 class UserController:
     def __init__(self):
-        """Controller to handle user operations."""
         self.authenticator = CLIAuthenticator()
         self.current_user = None
 

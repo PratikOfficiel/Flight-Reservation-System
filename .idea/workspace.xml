@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74ab324c-ab90-4058-9ea3-958fe65e14ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sample.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/database_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/flight_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/flight_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/reservation_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/reservation_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/seed.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

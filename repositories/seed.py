@@ -1,9 +1,10 @@
-# Import necessary libraries
-# import the connector
+
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+print(os.getcwd())
 
 import mysql.connector
 import pandas as pd
@@ -19,7 +20,7 @@ connection = mysql.connector.connect(
 
 mycursor = connection.cursor()
 
-df = pd.read_csv('/usercode/flight_reservation/dataset/airlines.csv')
+df = pd.read_csv('dataset/airlines.csv')
 
 engine = create_engine(f"mysql+mysqlconnector://{os.getenv("DB_USER")}:{os.getenv("DB_PASSWORD")}@{os.getenv("DB_HOST")}/flight")
 
@@ -33,7 +34,7 @@ connection.commit()
 
 ################################################################################################################
 
-df = pd.read_csv('/usercode/flight_reservation/dataset/airports.csv')
+df = pd.read_csv('dataset/airports.csv')
 
 mycursor = connection.cursor()
 
@@ -64,7 +65,7 @@ for index, row in df.iterrows():
 
 ################################################################################################################
 
-flights_df = pd.read_csv('/usercode/flight_reservation/dataset/flights.csv')
+flights_df = pd.read_csv('dataset/flights.csv')
 # print(flights_df.columns)
 mycursor = connection.cursor()
 
